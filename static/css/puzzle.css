@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .game-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .emoji-card {
+    width: 100%;
+    height: 100px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .emoji-card.flipped {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+  }
+  
+  .timer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
+    animation: bubble 2s ease-in infinite;
+  }
+  
+  @keyframes bubble {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .bubble-container .bubble {
+    animation: bubble 2s ease-in infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .instruction-container {
+    display: block;
+    margin-bottom: 20px;
+  }
+  

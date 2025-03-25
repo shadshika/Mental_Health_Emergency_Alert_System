@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #333333;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #555555;
+}
+
+.form-control {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+button {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Active Question Styles */
+.question {
+  display: none;
+}
+
+.question.active {
+  display: block;
+}
+
+/* Next Button Styles */
+button[type="button"] {
+  margin-top: 20px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  margin-top: 30px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.2rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+      padding: 20px;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
+  .form-control {
+      font-size: 0.95rem;
+  }
+
+  button {
+      font-size: 1rem;
+  }
+}
+
+
+.question {
+  display: none;
+}
+.question.active {
+  display: block;
+}
+
+/* Success message popup styling */
+.success-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f9ff;
+  border: 1px solid #5e84e2;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #5e84e2;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.success-message i {
+  font-size: 30px;
+  margin-right: 15px;
+  color: #5e84e2;
+}

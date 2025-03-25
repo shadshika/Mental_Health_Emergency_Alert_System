@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Add Bootstrap for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center text-white">Mental Health Alert System</h3>
+        
+        <!-- Admin Profile Section -->
+        <div class="profile-section">
+            <img src="/static/img/adminprofile.jpg" alt="Admin Profile" class="img-fluid rounded-circle">
+        </div>
+        
+        <!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Navigation Links -->
+<a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+<a href="#stressprediction"><i class="fas fa-chart-line"></i> Prediction Details</a>
+
+<a href="#"><i class="fas fa-chart-pie"></i> Chart</a>
+
+
+        <br>
+        <!-- Notifications Section -->
+        <div class="notifications-section">
+            <h5>
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge" id="notification-count">3</span> <!-- Dynamic Badge -->
+            </h5>
+            <ul class="list-unstyled">
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+<br>
+            </ul>
+        </div>
+
+        <!-- Logout Button -->
+        <a href="/login" class="logout-btn">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2 class="display-4 mb-4">Admin Dashboard</h2>
+
+        
+        <!-- Dashboard Cards -->
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card card-shadow">
+                    <div class="card-header">Emergency Alerts</div>
+                    <div class="card-body">
+                        <h4 class="card-title">5</h4>
+                        <p class="card-text">New Mental Health Alerts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card card-shadow">
+                    <div class="card-header">High-Risk Cases</div>
+                    <div class="card-body">
+                        <h4 class="card-title">12</h4>
+                        <p class="card-text"> Immediate Attention</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card card-shadow">
+                    <div class="card-header">Moderate-Risk Cases</div>
+                    <div class="card-body">
+                        <h4 class="card-title">20</h4>
+                        <p class="card-text">Students Requiring Follow-Up</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card card-shadow">
+                    <div class="card-header">New Consultations</div>
+                    <div class="card-body">
+                        <h4 class="card-title">7</h4>
+                        <p class="card-text">Pending Counselor Appointments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of Predictions -->
+        <div class="card card-shadow mt-4">
+            <div id="stressprediction">
+            <div class="card-header">Prediction Data</div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Gender</th>
+                            <th>Sleep Duration</th>
+                            <th>Diet</th>
+                            <th>Suicidal Thoughts</th>
+                            <th>Study Hours</th>
+                            <th>Financial Stress</th>
+                            <th>Conflict</th>
+                            <th>Mood</th>
+                            <th>Depression</th>
+                            <th>Predicted Score</th>
+                            <th>Stress Level</th>
+                            <th>Timestamp</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prediction in predictions %}
+                            <tr>
+                                <td>{{ prediction.id }}</td>
+                                <td>{{ prediction.gender }}</td>
+                                <td>{{ prediction.sleep }}</td>
+                                <td>{{ prediction.diet }}</td>
+                                <td>{{ prediction.suicidal }}</td>
+                                <td>{{ prediction.study_hours }}</td>
+                                <td>{{ prediction.financial_stress }}</td>
+                                <td>{{ prediction.conflict }}</td>
+                                <td>{{ prediction.mood }}</td>
+                                <td>{{ prediction.depression }}</td>
+                                <td>{{ prediction.predicted_score }}</td>
+                                <td>{{ prediction.stress_level }}</td>
+                                <td>{{ prediction.timestamp }}</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <!-- Delete button on the left -->
+                                        <a href="{{ url_for('delete_prediction', prediction_id=prediction.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                        
+                                        <!-- View button on the right -->
+                                        <a href="{{ url_for('view_prediction', prediction_id=prediction.id) }}" class="btn btn-primary btn-sm">View</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f4f8; /* Subtle background color */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Main Container Styling */
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Luxurious soft shadow */
+    padding: 40px 50px;
+    max-width: 900px;
+    margin: 50px auto;
+    position: relative;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 3px solid darkblue; /* Underline effect */
+    padding-bottom: 10px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for table */
+}
+
+.table th, .table td {
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: darkblue; /* Premium blue */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.table td {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table tr:hover td {
+    background-color: #f5f5f5; /* Hover effect for table rows */
+}
+
+.table-bordered tr:last-child td {
+    border-bottom: none;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color:darkblue; /* Luxurious blue */
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color:lightblue; /* Darker blue for hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.btn-primary:active {
+    transform: translateY(1px); /* Subtle active button effect */
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4e73df;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #375a9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+/* Center the "Back to Dashboard" button */
+.btn-primary {
+    display: block;
+    width: 200px; /* Set the width of the button */
+    margin: 30px auto; /* Center the button horizontally */
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: darkblue; /* Luxurious blue */
+    color: white;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on button */
+.btn-primary:hover {
+    background-color: #375a9c;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    transform: translateY(-3px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}

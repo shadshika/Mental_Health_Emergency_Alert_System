@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/view prediction.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Prediction Details</h2>
+
+    <!-- Display the prediction data -->
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <td>{{ prediction.id }}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{ prediction.gender }}</td>
+        </tr>
+        <tr>
+            <th>Sleep Duration</th>
+            <td>{{ prediction.sleep }}</td>
+        </tr>
+        <tr>
+            <th>Diet</th>
+            <td>{{ prediction.diet }}</td>
+        </tr>
+        <tr>
+            <th>Suicidal Thoughts</th>
+            <td>{{ prediction.suicidal }}</td>
+        </tr>
+        <tr>
+            <th>Study Hours</th>
+            <td>{{ prediction.study_hours }}</td>
+        </tr>
+        <tr>
+            <th>Financial Stress</th>
+            <td>{{ prediction.financial_stress }}</td>
+        </tr>
+        <tr>
+            <th>Conflict</th>
+            <td>{{ prediction.conflict }}</td>
+        </tr>
+        <tr>
+            <th>Mood</th>
+            <td>{{ prediction.mood }}</td>
+        </tr>
+        <tr>
+            <th>Depression</th>
+            <td>{{ prediction.depression }}</td>
+        </tr>
+        <tr>
+            <th>Predicted Score</th>
+            <td>{{ prediction.predicted_score }}</td>
+        </tr>
+        <tr>
+            <th>Stress Level</th>
+            <td>{{ prediction.stress_level }}</td>
+        </tr>
+        <tr>
+            <th>Timestamp</th>
+            <td>{{ prediction.timestamp }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ url_for('admindash') }}" class="btn btn-primary">Back to Dashboard</a>
+</div>
+
+</body>
+</html>

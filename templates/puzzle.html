@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Matching Puzzle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/puzzle.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Menu bar for navigation -->
+  <div class="d-flex justify-content-between mb-3">
+    <button id="puzzleButton" class="btn btn-primary">Start Puzzle</button>
+  </div>
+
+  <!-- Instructions Modal -->
+  <div id="instructionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="instructionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="instructionModalLabel">Game Instructions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Gold Level: Completed in 1–60 seconds.</p>
+          <p>Silver Level: Completed in 61–120 seconds.</p>
+          <p>Bronze Level: Completed in 121–180 seconds.</p>
+          <p>Fail: More than 180 seconds.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="startGame()">Start Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Puzzle Game Container -->
+  <div class="game-container" id="gameContainer">
+    <h2>Emoji Matching Puzzle</h2>
+    <p>Match all the emojis as quickly as possible!</p>
+    <div class="timer">Time: <span id="timer">0</span> seconds</div>
+    <div class="emoji-grid" id="emojiGrid"></div>
+  </div>
+
+  <!-- Modal for Game Result -->
+  <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultModalLabel">Game Over</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center" id="resultMessage"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="restartGame()">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bubble-container" id="bubbleContainer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='js/puzzle.js') }}"></script>
+
+</body>
+</html>

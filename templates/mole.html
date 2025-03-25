@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mole.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Whack-a-Mole! 😂</h1>
+        <div class="scoreboard">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div class="hole-container">
+            <div class="hole" id="hole1"></div>
+            <div class="hole" id="hole2"></div>
+            <div class="hole" id="hole3"></div>
+            <div class="hole" id="hole4"></div>
+            <div class="hole" id="hole5"></div>
+            <div class="hole" id="hole6"></div>
+        </div>
+        <button id="start-btn">Start Game</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/mole.js') }}"></script>
+</body>
+</html>

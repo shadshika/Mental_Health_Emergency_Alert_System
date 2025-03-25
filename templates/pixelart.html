@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Art Creator Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pixelart.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-4">Pixel Art Creator Game</h1>
+    
+    <div class="text-center">
+      <button class="btn btn-primary" onclick="clearCanvas()">Clear</button>
+      <button class="btn btn-success" onclick="resetGame()">Play Again</button>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-2">
+        <h4>Select Color</h4>
+        <div class="btn-group-vertical">
+          <button class="btn btn-danger" onclick="selectColor('red')">Red</button>
+          <button class="btn btn-primary" onclick="selectColor('blue')">Blue</button>
+          <button class="btn btn-success" onclick="selectColor('green')">Green</button>
+          <button class="btn btn-warning" onclick="selectColor('yellow')">Yellow</button>
+          <button class="btn btn-dark" onclick="selectColor('black')">Black</button>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+        <h4>Your Canvas</h4>
+        <div class="grid" id="pixelCanvas"></div>
+        <div class="text-center mt-3">
+          <p id="scoreMessage"></p>
+          <p id="currentScore"></p>  <!-- Display score -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/pixelart.js') }}"></script>
+</body>
+</html>

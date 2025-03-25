@@ -1,0 +1,90 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2f4f4f;
+  }
+  
+  #message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6347;
+  }
+  
+  #gameArea {
+    position: relative;
+    background-color: #e0e0e0;
+    overflow: hidden;
+  }
+  
+  .balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: floatBalloon 5s linear infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes floatBalloon {
+    0% { left: 0%; top: 80%; }
+    50% { left: 50%; top: 50%; }
+    100% { left: 100%; top: 80%; }
+  }
+  
+  .bullet {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.3s;
+  }
+  
+  .bullet.active {
+    opacity: 1;
+    transform: translateY(-100px);
+  }
+  
+  #shootBtn {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+  }
+  
+  #shootBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  #shootBtn i {
+    margin-right: 10px;
+  }
+  
+  #startBtn {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #dc3545;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+  }
+  
+  #startBtn:hover {
+    background-color: #c82333;
+  }
+  
+  #startBtn i {
+    margin-right: 10px;
+  }
+  
